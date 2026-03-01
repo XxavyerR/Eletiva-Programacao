@@ -10,29 +10,30 @@
 
 <body>
     <div class="container py-3">
-        <h1>exercicio5</h1>
+        <h1>exercicio18</h1>
         <form method="post">
             <div class="mb-3">
-                <label for="valor1" class="form-label">Informe o primeiro valor:</label>
-                <input type="number" id="valor1" name="valor1" class="form-control" required="">
+                <label for="capital" class="form-label">Informe o seu capital:</label>
+                <input type="number" id="capital" name="capital" class="form-control" required="">
             </div>
             <div class="mb-3">
-                <label for="valor2" class="form-label">Informe o segundo valor:</label>
-                <input type="number" id="valor2" name="valor2" class="form-control" required="">
+                <label for="juros" class="form-label">Informe o percentual de juros:</label>
+                <input type="number" id="juros" name="juros" class="form-control" required="">
             </div>
             <div class="mb-3">
-                <label for="valor3" class="form-label">Informe o terceiro valor:</label>
-                <input type="number" id="valor3" name="valor3" class="form-control" required="">
+                <label for="periodo" class="form-label">Informe o período (em meses) de juros:</label>
+                <input type="number" id="periodo" name="periodo" class="form-control" required="">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $valor1 = $_POST['valor1'];
-            $valor2 = $_POST['valor2'];
-            $valor3 = $_POST['valor3'];
-            $media = ($valor1 + $valor2 + $valor3) / 3;
-            echo "a média é $media";
+            $capital = $_POST['capital'];
+            $juros = $_POST['juros'];
+            $periodo = $_POST['periodo'];
+            $taxa = $juros / 100;
+            $montante = $capital * pow((1 + $taxa), $periodo);
+            echo "O montante com juros compostos é: " . round($montante, 2);
         }
         ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"

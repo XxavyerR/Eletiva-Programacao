@@ -16,18 +16,20 @@
                 <label for="celsius" class="form-label">Informe o valor em celsius: </label>
                 <input type="number" id="celius" name="celsius" class="form-control" required="">
             </div>
-            
+
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
         <?php
-            if($_SERVER['REQUEST_METHOD'] == "POST"){
-                $celsius = $_POST['celsius'];
-                $fahrenheit = $fahrenheit = ($celsius * 1.8) + 32;
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $celsius = $_POST['celsius'];
+            $fahrenheit = $fahrenheit = ($celsius * 1.8) + 32;
 
-                echo "$celsius °C equivale a $fahrenheit °F";
-            }
+            echo "$celsius °C equivale a $fahrenheit °F";
+        }
         ?>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+            crossorigin="anonymous"></script>
     </div>
 </body>
 

@@ -10,24 +10,24 @@
 
 <body>
     <div class="container py-3">
-        <h1>exercicio8</h1>
+        <h1>exercicio12</h1>
         <form method="post">
             <div class="mb-3">
-                <label for="valor1" class="form-label">Informe a altura do retângulo:</label>
-                <input type="number" id="valor1" name="valor1" class="form-control" required="">
+                <label for="base" class="form-label">Informe a base a ser calculada: </label>
+                <input type="number" id="base" name="base" class="form-control" required="">
             </div>
             <div class="mb-3">
-                <label for="valor2" class="form-label">Informe a largura do retângulo:</label>
-                <input type="number" id="valor2" name="valor2" class="form-control" required="">
+                <label for="expoente" class="form-label">Informe o expoente a ser elevado: </label>
+                <input type="number" id="expoente" name="expoente" class="form-control" required="">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $valor1 = $_POST['valor1'];
-            $valor2 = $_POST['valor2'];
-            $area = $valor1 * $valor2;
-            echo "A área do retângulo é: $area";
+            $base = $_POST['base'];
+            $expoente = $_POST['expoente'];
+            $potencia = pow($base, $expoente);
+            echo "A potência é: $potencia";
         }
         ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"

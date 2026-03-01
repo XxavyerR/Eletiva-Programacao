@@ -10,24 +10,25 @@
 
 <body>
     <div class="container py-3">
-        <h1>exercicio8</h1>
+        <h1>exercicio19</h1>
         <form method="post">
             <div class="mb-3">
-                <label for="valor1" class="form-label">Informe a altura do retângulo:</label>
-                <input type="number" id="valor1" name="valor1" class="form-control" required="">
+                <label for="dias" class="form-label">Informe o valor em dias:</label>
+                <input type="number"id="dias" name="dias" class="form-control" required="">
             </div>
-            <div class="mb-3">
-                <label for="valor2" class="form-label">Informe a largura do retângulo:</label>
-                <input type="number" id="valor2" name="valor2" class="form-control" required="">
-            </div>
+
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $valor1 = $_POST['valor1'];
-            $valor2 = $_POST['valor2'];
-            $area = $valor1 * $valor2;
-            echo "A área do retângulo é: $area";
+            $dias = $_POST['dias'];
+            $horas = $dias * 24;
+            $minutos = $horas * 60;
+            $segundos = $minutos * 60;
+            echo "O valor de $dias dia(s) equivale a: <br>";
+            echo "Horas: $horas <br>";
+            echo "Minutos: $minutos <br>";
+            echo "Segundos: $segundos";
         }
         ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
