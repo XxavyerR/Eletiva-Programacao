@@ -11,20 +11,28 @@
 
 <body>
     <div class="container py-3">
-        <h1>Exercicio 5</h1>
+        <h1>exercicio 9</h1>
         <form method="post">
             <div class="mb-3">
-                <label for="numero" class="form-label">Digite um numero:</label>
-                <input type="number" id="numero" name="numero" class="form-control" required="">
+                <label for="frase" class="form-label">Digite uma frase:</label>
+                <input type="text" id="frase" name="frase" class="form-control" required="">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
         <?php
-        //sqrt faz o calculo da raiz quadrada
+        
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $numero = $_POST['numero'];
-            $raiz = sqrt($numero);
-            echo "A raiz quadrada de $numero é $raiz";
+            $frase = $_POST['frase'];
+            //trim serve para remover espaços extras incluindo quebras de linha e tabulações
+            $frase_limpa = trim($frase);
+            //str_replace serve substitui todos espaços em branco "",por nada "
+            $fraseSemEspaco = str_replace(" ", "", $frase);
+            
+            echo " Frase Original:" . $frase . "\n";
+            echo " Frase sem espaços:" . $frase_limpa . "\n";
+            echo " Frase sem nenhum espaço " . $fraseSemEspaco . "\n";
+            //ARRUMAR QUEBRA DE LINHA NO CÒDIGO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            
         }
         ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"

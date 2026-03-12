@@ -10,7 +10,7 @@
 
 <body>
     <div class="container py-3">
-        <h1>exercicio1</h1>
+        <h1>exercicio3</h1>
         <form method="post">
             <div class="mb-3">
                 <label for="palavra1" class="form-label">Informe o primeiro valor:</label>
@@ -26,7 +26,8 @@
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $palavra1 = $_POST['palavra1'];
             $palavra2 = $_POST['palavra2'];
-            if(str_contains($palavra1, palavra2)){
+            //strcontains serve pra verificar se uma palavra está contida na frase
+            if(str_contains($palavra1, $palavra2)){
                 echo " a palavra $palavra2 está contida na $palavra1";
             }
             else{
