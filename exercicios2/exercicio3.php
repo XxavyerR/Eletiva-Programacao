@@ -27,9 +27,7 @@
             $A = (float) $_POST['A'];
             $B = (float) $_POST['B'];
             if ($A == $B) {
-                echo "<div class=\"alert alert-warning mt-3\">";
                 echo "Números iguais: $A";
-                echo "</div>";
             } else {
                 // exibir todos os valores entre A e B, incluindo limites
                 if ($A < $B) {
